@@ -77,7 +77,7 @@ def get_summary_from_ai(url_to_summarize):
     """
     Sends a request to the Gemini API and returns the summary.
     """
-    api_key = "AIzaSyBJJNZlN8aBfS08S0W3EaHuA9nIW-npB_0"
+    api_key = "ADD_YOUR_API_KEY"
     api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={api_key}"
     
     prompt = f"Please provide a concise, well-structured summary of the content found at this URL: {url_to_summarize}. Focus on the key points and main arguments."
@@ -130,4 +130,5 @@ def get_content(request):
             # Add the results to the context to display them on the page
             context['summary'] = summary
             context['submitted_url'] = article_url
+
     return render(request, 'home.html', context)
